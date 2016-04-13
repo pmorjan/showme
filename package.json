@@ -1,0 +1,23 @@
+{
+  "name": "term-cloud",
+  "version": "1.0.0",
+  "description": "Let others watch your terminal session live via HTTP",
+  "main": "app.js",
+  "author": "Peter Morjan <pmorjan@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "NODE_ENV=production bin/term-cloud"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pmorjan/term-cloud.git"
+  },
+  "dependencies": {
+    "commander": "^2.9.0",
+    "pty": "0.0.0",
+    "socket.io-client": "^1.4.5"
+  },
+  "bin": {
+    "term-cloud": "term-cloud"
+  }
+}
