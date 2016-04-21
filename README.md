@@ -1,12 +1,11 @@
-
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
-
 # term-cloud
 
-### watch your terminal session in the cloud
+### Let others watch your terminal session live via HTTP
 
 ### Install:
 ```sh
+  npm install -g git+ssh://git@github.rtp.raleigh.ibm.com:PEMORJAN-de/term-cloud.git
+  or
   npm install -g .
 ```
 
@@ -14,15 +13,16 @@
 ```sh
   Usage: term-cloud [options]
 
+  Let others watch your terminal session live via HTTP
+
   Options:
 
     -h, --help           output usage information
-    -e, --eu             use EU cloud: https://broadcast.eu-gb.mybluemix.net
-                              default: https://broadcast.mybluemix.net
+    -c, --cloud [us|eu]  which cloud to use - default: us
     -s, --shell <shell>  default shell: bash
 
   Examples:
     term-cloud
-    term-cloud --eu --shell /bin/csh
+    term-cloud -c eu --shell /bin/csh
 
 ```

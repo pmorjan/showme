@@ -6,11 +6,11 @@
   "author": "Peter Morjan <pmorjan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=production bin/term-cloud"
+    "start": "NODE_ENV=production ./term-cloud"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:pmorjan/term-cloud.git"
+    "url": "https://github.rtp.raleigh.ibm.com/PEMORJAN-de/term-cloud.git"
   },
   "dependencies": {
     "commander": "^2.9.0",
