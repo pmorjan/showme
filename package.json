@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "commander": "^2.9.0",
-    "ptyw.js": "^0.3.7",
+    "pty.js": "^0.3.0",
     "socket.io-client": "^1.4.5"
   },
   "bin": {
