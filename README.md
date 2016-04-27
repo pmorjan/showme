@@ -1,17 +1,17 @@
-# term-cloud
+# showme
 
 ### Let others watch your terminal session live via HTTP
 
 ### Install:
 ```sh
-  npm install -g git+ssh://git@github.rtp.raleigh.ibm.com:PEMORJAN-de/term-cloud.git
+  npm install -g git+ssh://git@github.rtp.raleigh.ibm.com:PEMORJAN-de/showme.git
   or
   npm install -g .
 ```
 
 ### Usage:
 ```sh
-  Usage: term-cloud [options]
+  Usage: showme [options]
 
   Let others watch your terminal session live via HTTP
 
@@ -22,7 +22,7 @@
     -s, --shell <shell>  default shell: bash
 
   Examples:
-    term-cloud
-    term-cloud -c eu --shell /bin/csh
+    showme
+    showme -c eu --shell /bin/csh
 
 ```

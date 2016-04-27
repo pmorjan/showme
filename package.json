@@ -1,16 +1,16 @@
 {
-  "name": "term-cloud",
+  "name": "showme",
   "version": "1.0.0",
   "description": "Let others watch your terminal session live via HTTP",
   "main": "app.js",
   "author": "Peter Morjan <pmorjan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=production ./term-cloud"
+    "start": "NODE_ENV=production ./showme"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.rtp.raleigh.ibm.com/PEMORJAN-de/term-cloud.git"
+    "url": "https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git"
   },
   "dependencies": {
     "commander": "^2.9.0",
@@ -18,6 +18,6 @@
     "socket.io-client": "^1.4.5"
   },
   "bin": {
-    "term-cloud": "term-cloud"
+    "showme": "showme"
   }
 }
