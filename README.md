@@ -6,7 +6,8 @@
 ```sh
   npm install -g git+ssh://git@github.rtp.raleigh.ibm.com:PEMORJAN-de/showme.git
   or
-  npm install -g .
+  git clone git+ssh://git@github.rtp.raleigh.ibm.com:PEMORJAN-de/showme.git
+  npm install -g showme
 ```
 
 ### Usage:
