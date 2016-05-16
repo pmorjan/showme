@@ -19,7 +19,7 @@
   Options:
 
     -h, --help           output usage information
-    -c, --cloud [us|eu]  which cloud to use - default: us
+    -c, --cloud [us|eu]  which cloud to use - default: eu
     -s, --shell <shell>  default shell: bash
 
   Examples:
