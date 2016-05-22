@@ -1,6 +1,6 @@
 {
   "name": "showme",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Let others watch your terminal session live via HTTP",
   "main": "app.js",
   "author": "Peter Morjan <pmorjan@gmail.com>",
@@ -19,5 +19,8 @@
   },
   "bin": {
     "showme": "showme"
+  },
+  "engines" : {
+    "node" : ">=4.0.0"
   }
 }
