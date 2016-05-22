@@ -19,7 +19,7 @@
   Options:
 
     -h, --help           output usage information
-    -s, --shell <shell>  default shell: bash
+    -s, --shell <shell>  shell to use, default: bash
 
   Examples:
     showme
