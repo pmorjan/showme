@@ -4,10 +4,9 @@
 
 ### Install:
 ```sh
-  npm install -g git+ssh://git@github.rtp.raleigh.ibm.com:PEMORJAN-de/showme.git
-  or
-  git clone https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git
-  npm install -g showme
+  git clone -c http.sslVerify=false https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git
+  cd showme
+  npm install -g
 ```
 
 ### Usage:
