@@ -1,2 +1,2 @@
-node "%~dp0\lib\app.js" %*
+node "%~dp0\app.js" %*
 

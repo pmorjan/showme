@@ -6,7 +6,7 @@
   "author": "Peter Morjan <pmorjan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "NODE_ENV=production ./showme"
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
