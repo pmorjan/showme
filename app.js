@@ -3,7 +3,7 @@ const os = require('os')
 const cmd = require('commander')
 const socketIo = require('socket.io-client')
 const pty = require('ptyw.js')
-const key = 'p34axz3bzr'
+const key = 'p34axz3bzs'
 const url = process.env.SHOWME_URL
   ? process.env.SHOWME_URL : 'https://showme.eu-gb.mybluemix.net'
 const shell = os.platform() === 'win32' ? 'cmd.exe' : 'bash'
@@ -41,7 +41,7 @@ socket
     process.exit(1)
   })
   .on('id', function (id) {
-    const re = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/
+    const re = /^[0-9a-f]{8}$/
     if (typeof id === 'string' && re.test(id)) {
       console.log('\n# %s/%s\n', url, id)
     } else {
