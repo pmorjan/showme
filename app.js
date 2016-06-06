@@ -40,12 +40,12 @@ socket
     console.error('socket.io error:', error)
     process.exit(1)
   })
-  .on('id', function (id) {
+  .on('uid', function (uid) {
     const re = /^[0-9a-f]{8}$/
-    if (typeof id === 'string' && re.test(id)) {
-      console.log('\n# %s/%s\n', url, id)
+    if (typeof uid === 'string' && re.test(uid)) {
+      console.log('\n# %s/%s\n', url, uid)
     } else {
-      console.error('# received invalid id')
+      console.error('# received invalid uid')
       process.exit(1)
     }
   })

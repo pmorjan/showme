@@ -9,6 +9,14 @@
   npm install -g
 ```
 
+### Alternative Install via Docker Image:
+```sh
+  git clone -c http.sslVerify=false https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git
+  cd showme
+  docker build -t showme .
+  docker run -ti showme
+```
+
 ### Usage:
 ```sh
   Usage: showme [options]
@@ -23,5 +31,4 @@
   Examples:
     showme
     showme -s /bin/csh
-
 ```
