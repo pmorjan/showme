@@ -12,4 +12,6 @@ RUN useradd -m app
 
 USER app
 
+ENV NODE_ENV production
+
 CMD ["npm", "start"]

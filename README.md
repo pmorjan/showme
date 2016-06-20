@@ -9,7 +9,12 @@
   npm install -g
 ```
 
-### Alternative Install via Docker Image:
+### Run via public Docker image:
+```
+   docker run -ti pmorjan/showme
+```
+
+### Build private Docker Image:
 ```sh
   git clone -c http.sslVerify=false https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git
   cd showme
