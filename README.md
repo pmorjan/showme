@@ -24,16 +24,11 @@
 
 ### Usage:
 ```sh
-  Usage: showme [options]
+  Usage: showme [shell]
 
-  Let others watch your terminal session on the web
-
-  Options:
-
-    -h, --help           output usage information
-    -s, --shell <shell>  shell to use, default: bash
+    shell: shell to use, default: bash/cmd.exe
 
   Examples:
     showme
-    showme -s /bin/csh
+    showme /bin/csh
 ```
