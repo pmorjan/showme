@@ -9,7 +9,7 @@ const url = process.env.SHOWME_URL
 let shell = os.platform() === 'win32' ? 'cmd.exe' : 'bash'
 
 if (process.argv.length > 2) {
-  switch(process.argv[2]) {
+  switch (process.argv[2]) {
     case '-h':
       console.log('Usage: showme [shell]')
       break
@@ -65,9 +65,14 @@ function spawnShell () {
       socket.emit('data', data)
     })
     .on('error', err => {
-      console.error('error:', err)
       process.stdin.setRawMode(false)
-      process.exit(1)
+      if (err.code === 'EIO' && err.errno === 'EIO' && err.syscall === 'read') {
+        // ignore error on close evt
+        process.exit(0)
+      } else {
+        console.error('error:', err)
+        process.exit(1)
+      }
     })
     .on('exit', () => {
       process.stdin.setRawMode(false)
