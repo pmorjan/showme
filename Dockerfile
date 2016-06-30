@@ -14,4 +14,4 @@ USER app
 
 ENV NODE_ENV production
 
-CMD ["npm", "start"]
+CMD ["node", "app.js"]
