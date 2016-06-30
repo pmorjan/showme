@@ -20,6 +20,11 @@ if (process.argv.length > 2) {
 
 process.title = 'showme'
 
+if (!process.stdin.isTTY) {
+  console.error('error: no TTY context')
+  process.exit(1)
+}
+
 const socket = socketIo(url + '/' + key, {
   reconnectionAttempts: 5,
   query: 'key=' + key
