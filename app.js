@@ -12,6 +12,7 @@ if (process.argv.length > 2) {
   switch (process.argv[2]) {
     case '-h':
       console.log('Usage: showme [shell]')
+      process.exit(0)
       break
     default: shell = process.argv[2]
   }
@@ -24,17 +25,17 @@ const socket = socketIo(url + '/' + key, {
   query: 'key=' + key
 })
 socket
-  .on('connect', () => {
+  .on('connect', function () {
     spawnShell()
-  }).on('disconnect', err => {
+  }).on('disconnect', function (err) {
     console.error('disconnected:', err)
     process.exit(1)
   })
-  .on('error', error => {
+  .on('error', function (error) {
     console.error('socket.io error:', error)
     process.exit(1)
   })
-  .on('uid', uid => {
+  .on('uid', function (uid) {
     const re = /^[0-9a-f]{8}$/
     if (typeof uid === 'string' && re.test(uid)) {
       console.log('\n# %s/%s\n', url, uid)
@@ -43,10 +44,10 @@ socket
       process.exit(1)
     }
   })
-  .on('reconnecting', count => {
+  .on('reconnecting', function (count) {
     console.error('trying to connect to %s (%d)', url, count)
   })
-  .on('reconnect_failed', () => {
+  .on('reconnect_failed', function () {
     console.error('# giving up')
     process.exit(1)
   })
@@ -60,11 +61,11 @@ function spawnShell () {
     env: process.env
   })
   term
-    .on('data', data => {
+    .on('data', function (data) {
       process.stdout.write(data)
       socket.emit('data', data)
     })
-    .on('error', err => {
+    .on('error', function (err) {
       process.stdin.setRawMode(false)
       if (err.code === 'EIO' && err.errno === 'EIO' && err.syscall === 'read') {
         // ignore error on close evt
@@ -74,7 +75,7 @@ function spawnShell () {
         process.exit(1)
       }
     })
-    .on('exit', () => {
+    .on('exit', function () {
       process.stdin.setRawMode(false)
       console.log('# closed connection to the cloud')
       process.exit(0)
@@ -82,11 +83,11 @@ function spawnShell () {
 
   process.stdin.setRawMode(true)
 
-  process.stdin.on('data', data => {
+  process.stdin.on('data', function (data) {
     term.write(data)
   })
 
-  process.stdout.on('resize', () => {
+  process.stdout.on('resize', function () {
     term.resize(process.stdout.columns, process.stdout.rows)
     socket.emit('size', {
       cols: process.stdout.columns,

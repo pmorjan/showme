@@ -1,6 +1,6 @@
 {
   "name": "showme",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Let others watch your terminal session live on the web",
   "main": "app.js",
   "author": "Peter Morjan <pmorjan@gmail.com>",
