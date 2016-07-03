@@ -1,17 +1,25 @@
-FROM node:argon
+FROM alpine:latest
 
 RUN mkdir -p /app
 
-WORKDIR /app
-
 COPY package.json app.js /app/
 
-RUN npm install
+RUN adduser -D -s /bin/bash app
 
-RUN useradd -m app
+RUN apk add --no-cache nodejs openssh-client bash
 
-USER app
+RUN apk add --no-cache python g++ make \
+    && cd /app \
+    && npm install \
+    && apk del --no-cache --rdepends --purge python g++ make
 
 ENV NODE_ENV production
 
-CMD ["node", "app.js"]
+USER app
+
+RUN echo . /etc/profile.d/color_prompt > /home/app/.bashrc
+
+WORKDIR /home/app
+
+CMD ["node", "/app/app.js"]
+
