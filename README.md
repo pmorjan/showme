@@ -2,19 +2,23 @@
 
 ### Let others watch your terminal session live on the web
 
-### Install:
+![ScreenShot](showme.gif)
+
+
+### Install via Git:
+Requires [Node.js](https://nodejs.org/)
 ```sh
   git clone -c http.sslVerify=false https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git
   cd showme
   npm install -g
 ```
 
-### Run via public Docker image:
+### Or run via public Docker image:
 ```
    docker run -ti pmorjan/showme
 ```
 
-### Build private Docker Image:
+### Or build private Docker image:
 ```sh
   git clone -c http.sslVerify=false https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git
   cd showme
