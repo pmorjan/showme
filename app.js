@@ -74,6 +74,7 @@ function spawnShell () {
       process.stdin.setRawMode(false)
       if (err.code === 'EIO' && err.errno === 'EIO' && err.syscall === 'read') {
         // ignore error on close evt
+        console.log('# closed connection to the cloud')
         process.exit(0)
       } else {
         console.error('error:', err)

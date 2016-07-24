@@ -6,7 +6,7 @@
 
 
 ### Install via Git:
-Requires [Node.js](https://nodejs.org/)
+Requires [Node.js] 6.x (https://nodejs.org/)
 ```sh
   git clone -c http.sslVerify=false https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git
   cd showme

@@ -1,6 +1,6 @@
 {
   "name": "showme",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Let others watch your terminal session live on the web",
   "main": "app.js",
   "author": "Peter Morjan <pmorjan@gmail.com>",
@@ -20,6 +20,6 @@
     "showme": "showme"
   },
   "engines" : {
-    "node" : ">=4.0.0"
+    "node" : ">=6.2.0"
   }
 }
