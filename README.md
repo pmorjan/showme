@@ -1,38 +1,27 @@
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
+
 # showme
 
 ### Let others watch your terminal session live on the web
 
 ![ScreenShot](showme.gif)
 
-
-### Install via Git:
-Requires [Node.js] 6.x (https://nodejs.org/)
+### Run via publicly available Docker image:
 ```sh
-  git clone -c http.sslVerify=false https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git
-  cd showme
-  npm install -g
+docker run -ti pmorjan/showme
 ```
 
-### Or run via public Docker image:
-```
-   docker run -ti pmorjan/showme
-```
-
-### Or build private Docker image:
+### Installation
+Requires [Node.js](https://nodejs.org/) and a C++ Compiler
 ```sh
-  git clone -c http.sslVerify=false https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git
-  cd showme
-  docker build -t showme .
-  docker run -ti showme
+npm install -g
 ```
 
 ### Usage:
-```sh
-  Usage: showme [shell]
+```
+Usage: showme [shell]
 
-    shell: shell to use, default: bash/cmd.exe
-
-  Examples:
-    showme
-    showme /bin/csh
+Examples:
+  showme
+  showme /bin/csh
 ```

@@ -1,6 +1,6 @@
 {
   "name": "showme",
-  "version": "1.4.4",
+  "version": "1.4.5",
   "description": "Let others watch your terminal session live on the web",
   "main": "app.js",
   "author": "Peter Morjan <pmorjan@gmail.com>",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.rtp.raleigh.ibm.com/PEMORJAN-de/showme.git"
+    "url": "https://github.ibm.com/Peter-Morjan/showme.git"
   },
   "dependencies": {
     "ptyw.js": "^0.4.0",
