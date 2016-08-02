@@ -2,11 +2,11 @@
 
 # showme
 
-### Let others watch your terminal session live on the web
+### Watch your terminal session live on the web
 
 ![ScreenShot](showme.gif)
 
-### Run via publicly available Docker image:
+### Run via publicly available Docker image
 ```sh
 docker run -ti pmorjan/showme
 ```
@@ -17,7 +17,7 @@ Requires [Node.js](https://nodejs.org/) and a C++ Compiler
 npm install -g
 ```
 
-### Usage:
+### Usage
 ```
 Usage: showme [shell]
 

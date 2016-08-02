@@ -1,11 +1,11 @@
 'use strict'
 const os = require('os')
+
 const socketIo = require('socket.io-client')
 const pty = require('ptyw.js')
-const key = 'p34axz3bzs'
-const url = process.env.SHOWME_URL
-  ? process.env.SHOWME_URL : 'https://showme.eu-gb.mybluemix.net'
 
+const key = 'p34axz3bzs'
+const url = process.env.SHOWME_URL || 'https://showme.eu-gb.mybluemix.net'
 let shell = os.platform() === 'win32' ? 'cmd.exe' : 'bash'
 
 if (process.argv.length > 2) {
@@ -32,12 +32,13 @@ const socket = socketIo(url + '/' + key, {
 socket
   .on('connect', function () {
     spawnShell()
-  }).on('disconnect', function (err) {
+  })
+  .on('disconnect', function (err) {
     console.error('disconnected:', err)
     process.exit(1)
   })
-  .on('error', function (error) {
-    console.error('socket.io error:', error)
+  .on('error', function (err) {
+    console.error('socket.io error:', err)
     process.exit(1)
   })
   .on('uid', function (uid) {
@@ -74,7 +75,7 @@ function spawnShell () {
       process.stdin.setRawMode(false)
       if (err.code === 'EIO' && err.errno === 'EIO' && err.syscall === 'read') {
         // ignore error on close evt
-        console.log('# closed connection to the cloud')
+        console.log('# session closed')
         process.exit(0)
       } else {
         console.error('error:', err)
@@ -83,7 +84,7 @@ function spawnShell () {
     })
     .on('exit', function () {
       process.stdin.setRawMode(false)
-      console.log('# closed connection to the cloud')
+      console.log('# session closed')
       process.exit(0)
     })
 
