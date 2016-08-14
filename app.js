@@ -30,9 +30,6 @@ const socket = socketIo(url + '/' + key, {
   query: 'key=' + key
 })
 socket
-  .on('connect', function () {
-    spawnShell()
-  })
   .on('disconnect', function (err) {
     console.error('disconnected:', err)
     process.exit(1)
@@ -42,9 +39,11 @@ socket
     process.exit(1)
   })
   .on('uid', function (uid) {
-    const re = /^[0-9a-f]{8}$/
-    if (typeof uid === 'string' && re.test(uid)) {
-      console.log('\n# %s/%s\n', url, uid)
+    if (typeof uid === 'string' && /^[0-9a-f]{8}$/.test(uid)) {
+      const clientURL = `${url}/${uid}`
+      console.log('\n# %s\n', clientURL)
+      process.env.SHOWME_CLIENT_URL = clientURL
+      spawnShell()
     } else {
       console.error('# received invalid uid')
       process.exit(1)
