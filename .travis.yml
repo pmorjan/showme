@@ -14,4 +14,4 @@ before_script:
 script:
   - standard --verbose
   - npm test
-  - docker run -t pmorjan/showme:test node /app/app.js env | grep ^SHOWME_CLIENT_URL
+  - docker run -t pmorjan/showme:test node /app/app.js true | grep '^# https://'

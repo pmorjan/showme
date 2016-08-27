@@ -42,7 +42,6 @@ socket
     if (typeof uid === 'string' && /^[0-9a-f]{8}$/.test(uid)) {
       const clientURL = `${url}/${uid}`
       console.log('\n# %s\n', clientURL)
-      process.env.SHOWME_CLIENT_URL = clientURL
       spawnShell()
     } else {
       console.error('# received invalid uid')
