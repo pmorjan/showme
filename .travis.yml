@@ -1,0 +1,17 @@
+sudo: required
+dist: trusty
+language: node_js
+node_js:
+  - "4"
+  - "6"
+services:
+  - docker
+install:
+  - npm install
+  - npm install -g standard
+before_script:
+  - docker build -t pmorjan/showme:test .
+script:
+  - standard --verbose
+  - npm test
+  - docker run -t pmorjan/showme:test node /app/app.js env | grep ^SHOWME_CLIENT_URL

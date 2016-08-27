@@ -2,6 +2,8 @@ FROM alpine:latest
 
 COPY package.json app.js /app/
 
+ENV NODE_ENV production
+
 RUN apk add --no-cache python g++ make nodejs openssh-client bash \
     && cd /app \
     && npm install \
@@ -12,8 +14,6 @@ RUN apk add --no-cache python g++ make nodejs openssh-client bash \
     && adduser -D -s /bin/bash app \
     && echo . /etc/profile.d/color_prompt > /home/app/.bashrc \
     && chown app:app /home/app/.bashrc
-
-ENV NODE_ENV production
 
 USER app
 

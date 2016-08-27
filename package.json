@@ -1,12 +1,13 @@
 {
   "name": "showme",
-  "version": "1.4.6",
+  "version": "1.4.7",
   "description": "Let others watch your terminal session live on the web",
   "main": "app.js",
   "author": "Peter Morjan <pmorjan@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "test": "node app.js env | grep ^SHOWME_CLIENT_URL"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,7 @@
   "bin": {
     "showme": "showme"
   },
-  "engines" : {
-    "node" : ">=6.2.0"
+  "engines": {
+    "node": ">=6.2.0"
   }
 }
