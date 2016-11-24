@@ -4,7 +4,8 @@ COPY package.json app.js /app/
 
 ENV NODE_ENV production
 
-RUN apk add --no-cache python g++ make nodejs openssh-client bash \
+RUN apk update \
+    && apk add --no-cache python g++ make nodejs openssh-client bash tini \
     && cd /app \
     && npm install \
     && rm -rf /usr/lib/node_modules/npm \
@@ -18,6 +19,8 @@ RUN apk add --no-cache python g++ make nodejs openssh-client bash \
 USER app
 
 WORKDIR /home/app
+
+ENTRYPOINT ["/sbin/tini", "--"]
 
 CMD ["node", "/app/app.js"]
 
