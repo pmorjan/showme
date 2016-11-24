@@ -18,8 +18,6 @@ if (process.argv.length > 2) {
   }
 }
 
-process.title = 'showme'
-
 if (!process.stdin.isTTY) {
   console.error('error: no TTY context')
   process.exit(1)
