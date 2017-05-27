@@ -13,7 +13,6 @@ if (process.argv.length > 2) {
     case '-h':
       console.log('Usage: showme [shell]')
       process.exit(0)
-      break
     default: shell = process.argv[2]
   }
 }
