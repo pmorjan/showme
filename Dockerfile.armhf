@@ -4,9 +4,6 @@ COPY package.json app.js /app/
 
 ENV NODE_ENV production
 
-ADD https://github.com/krallin/tini/releases/download/v0.13.0/tini-static-armhf /sbin/tini
-RUN sha1sum /sbin/tini | grep ^e12a36de468bd6036dd7d47d25f790ddad613b62 && chmod 755 /sbin/tini
-
 RUN apk update \
     && apk add --no-cache python g++ make nodejs openssh-client bash \
     && cd /app \
@@ -17,13 +14,11 @@ RUN apk update \
     && apk del --rdepends --purge python g++ make \
     && adduser -D -s /bin/bash app \
     && echo . /etc/profile.d/color_prompt > /home/app/.bashrc \
-    && chown app:app /home/app/.bashrc
+    && chown -R app:app /home/app
 
 USER app
 
 WORKDIR /home/app
-
-ENTRYPOINT ["/sbin/tini", "--"]
 
 CMD ["node", "/app/app.js"]
 

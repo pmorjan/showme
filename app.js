@@ -23,6 +23,9 @@ if (!process.stdin.isTTY) {
   process.exit(1)
 }
 
+process.on('SIGTERM', process.exit)
+process.on('SIGINT', process.exit)
+
 const socket = socketIo(url + '/' + key, {
   reconnectionAttempts: 5,
   query: 'key=' + key
